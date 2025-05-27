@@ -45,6 +45,7 @@ namespace CafeRestaurant_
             services.AddIdentity<IdentityUser, IdentityRole>().AddDefaultTokenProviders()
                 .AddEntityFrameworkStores<ApplicationDbContext>();
             services.AddSingleton<IEmailSender, EmailSender>();
+            services.Configure<EmailOptions>(Configuration);
             services.AddControllersWithViews()
             .AddRazorRuntimeCompilation();
             services.AddRazorPages();
